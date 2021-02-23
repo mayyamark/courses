@@ -1,0 +1,55 @@
+A QUERY:
+
+{
+  user(id: "40") {
+    firstName
+    company {
+      name
+    }
+  }
+  company(id: "1") {
+    ...companyDetails
+  }
+}
+
+fragment companyDetails on Company {
+  id
+  name
+  description
+}
+
+*********************************************
+
+ADD A USER MUTATION:
+
+mutation {
+  addUser(firstName: "Pesho", age: 26) {
+    id
+    firstName
+    age
+  }
+}
+
+*********************************************
+
+DELETE A USER MUTATION:
+
+mutation {
+  deleteUser(id: "3wwH_QybR") {
+    id
+    firstName
+    age
+  }
+}
+
+*********************************************
+
+EDIT A USER MUTATION:
+
+mutation {
+  editUser(id: "41", age: 26) {
+    id
+    firstName
+    age
+  }
+}
